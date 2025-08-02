@@ -20,7 +20,7 @@ Integrate the following content within your `lua/community.lua` file:
 
 ```lua
 return {
-  "AstroNvim/astrocommunity",
+  "emgi13/astrocommunity",
   { import = "astrocommunity.colorscheme.catppuccin" },
   -- ... import any community contributed plugins here
 }
