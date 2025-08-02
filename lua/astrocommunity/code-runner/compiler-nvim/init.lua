@@ -1,3 +1,4 @@
+---@type LazySpec
 return {
   "Zeioth/compiler.nvim",
   dependencies = {
@@ -15,6 +16,20 @@ return {
         },
       },
       config = function(_, opts) require("overseer").setup(opts) end,
+    },
+    {
+      "AstroNvim/astrocore",
+      ---@type AstroCoreOpts
+      opts = {
+        mappings = {
+          n = {
+            ["<LocalLeader>c"] = { desc = "Compiler.nvim" },
+            ["<LocalLeader>cr"] = { "<CMD>CompilerOpen<CR>", desc = "Compiler Open" },
+            ["<LocalLeader>cc"] = { "<CMD>CompilerStop<CR><CMD>CompilerRedo<CR>", desc = "Compiler Redo" },
+            ["<LocalLeader>cv"] = { "<CMD>CompilerToggleResults<CR>", desc = "Compiler Show Results" },
+          },
+        },
+      },
     },
   },
   cmd = { "CompilerOpen", "CompilerToggleResults" },
