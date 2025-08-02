@@ -1,6 +1,6 @@
 return {
   "sustech-data/wildfire.nvim",
-  event = "BufEnter",
+  event = "User AstroFile",
   dependencies = { "nvim-treesitter/nvim-treesitter" },
   opts = {},
 }
