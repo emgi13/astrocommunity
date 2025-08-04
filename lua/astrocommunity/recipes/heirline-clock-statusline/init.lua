@@ -5,7 +5,7 @@ return {
     ---@type AstroUIOpts
     opts = {
       icons = {
-        Clock = "", -- add icon for clock
+        Clock = "󱎫", -- add icon for clock
       },
     },
   },
@@ -25,7 +25,8 @@ return {
         end,
       },
       update = { "ModeChanged", pattern = "*:*", callback = vim.schedule_wrap(function() vim.cmd.redrawstatus() end) },
-      hl = status.hl.get_attributes "mode", -- highlight based on mode attributes
+      hl = { fg = "black", bold = true }, -- highlight based on mode attributes
+      padding = { left = 1 },
       surround = { separator = "right", color = status.hl.mode_bg }, -- background highlight based on mode
       init = status.init.update_events {
         { "User", pattern = "UpdateTime", callback = vim.schedule_wrap(function() vim.cmd.redrawstatus() end) },
