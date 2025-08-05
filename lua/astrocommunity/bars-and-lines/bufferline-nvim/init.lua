@@ -1,4 +1,4 @@
--- INFO: Making according to https://github.com/akinsho/bufferline.nvim/issues/836
+-- INFO: Making according to https://github.com/akinsho/bufferline.nvim/i _contextssues/836
 -- local mocha = require("catppuccin.palettes").get_palette "mocha"
 -- local black = false
 --
@@ -28,6 +28,15 @@
 
 return {
   "akinsho/bufferline.nvim",
+  event = "User AstroFile",
+  ---@type bufferline.UserConfig
+  opts = {
+    options = {
+      separator_style = "slope",
+      diagnostics = "nvim_lsp",
+      diagnostics_indicator = function(count, _level, _diagnostics_dict, _context) return "(" .. count .. ")" end,
+    },
+  },
   dependencies = {
     { import = "astrocommunity.recipes.disable-tabline" }, -- dependency before loading rest of the spec
     {
