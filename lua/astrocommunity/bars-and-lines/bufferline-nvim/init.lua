@@ -1,3 +1,31 @@
+-- INFO: Making according to https://github.com/akinsho/bufferline.nvim/issues/836
+-- local mocha = require("catppuccin.palettes").get_palette "mocha"
+-- local black = false
+--
+-- local sel_bg = mocha.base
+-- local unsel_bg = mocha.crust
+--
+-- local sel_fg = mocha.red
+-- local unsel_fg = mocha.blue
+--
+-- local active_set = { fg = sel_fg, bg = sel_bg }
+-- local inactive_set = { fg = unsel_fg, bg = unsel_bg }
+--
+-- ---@type table<string, bufferline.HLGroup>
+-- local hls = {
+--   fill = { bg = black },
+--   buffer_selected = active_set,
+--
+--   numbers = inactive_set,
+--   numbers_selected = active_set,
+--
+--   separator = { fg = black, bg = unsel_bg },
+--   separator_selected = { fg = black, bg = sel_bg },
+--
+--   modified = { fg = mocha.red, bg = unsel_bg },
+--   modified_selected = { fg = mocha.red, bg = sel_bg },
+-- }
+
 return {
   "akinsho/bufferline.nvim",
   dependencies = {
