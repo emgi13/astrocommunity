@@ -1,5 +1,12 @@
 return {
   "akinsho/bufferline.nvim",
+  event = "User AstroFile",
+  ---@type bufferline.UserConfig
+  opts = {
+    options = {
+      separator_style = "slope",
+    },
+  },
   dependencies = {
     { import = "astrocommunity.recipes.disable-tabline" }, -- dependency before loading rest of the spec
     {
@@ -84,5 +91,4 @@ return {
       },
     },
   },
-  event = "User AstroFile",
 }
