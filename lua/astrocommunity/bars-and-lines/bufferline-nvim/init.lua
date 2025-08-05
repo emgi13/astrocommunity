@@ -1,5 +1,5 @@
--- INFO: Making according to https://github.com/akinsho/bufferline.nvim/i _contextssues/836
--- local mocha = require("catppuccin.palettes").get_palette "mocha"
+-- INFO: Making according to (This Issue)[https://github.com/akinsho/bufferline.nvim/issues/836]
+-- -- local mocha = require("catppuccin.palettes").get_palette "mocha"
 -- local black = false
 --
 -- local sel_bg = mocha.base
@@ -36,6 +36,7 @@ return {
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(count, _level, _diagnostics_dict, _context) return "(" .. count .. ")" end,
       show_buffer_close_icons = false,
+      show_close_icon = false,
     },
   },
   dependencies = {
