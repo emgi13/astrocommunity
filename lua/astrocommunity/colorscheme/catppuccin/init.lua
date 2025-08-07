@@ -12,6 +12,14 @@ return {
         indent_scope_color = "lavender",
       },
     },
+    highlight_overrides = {
+      all = {
+        FloatBorder = {
+          fg = "#585b70",
+          bg = "NONE",
+        },
+      },
+    },
   },
   specs = {
     {
