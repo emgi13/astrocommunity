@@ -6,6 +6,16 @@ return {
   opts = function(_, opts)
     local utils = require "astrocore"
     return utils.extend_tbl(opts, {
+      messages = {
+        -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+        -- This is a current Neovim limitation.
+        enabled = true, -- enables the Noice messages UI
+        view = "notify", -- default view for messages
+        view_error = "notify", -- view for errors
+        view_warn = "notify", -- view for warnings
+        view_history = "messages", -- view for :messages
+        view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+      },
       lsp = {
         progress = { enabled = false }, -- Disable bottom right lsp progress
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
