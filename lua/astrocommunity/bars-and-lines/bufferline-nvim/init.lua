@@ -26,6 +26,12 @@
 --   modified_selected = { fg = mocha.red, bg = sel_bg },
 -- }
 
+local symbols = {
+  warning = "?",
+  error = "!",
+  hint = "'",
+}
+
 return {
   "akinsho/bufferline.nvim",
   event = "User AstroFile",
@@ -33,7 +39,9 @@ return {
   opts = {
     options = {
       diagnostics = "nvim_lsp",
-      diagnostics_indicator = function(count, _level, _diagnostics_dict, _context) return "(" .. count .. ")" end,
+      diagnostics_indicator = function(count, level, _diagnostics_dict, _context)
+        return (count or "") .. (symbols[level] or level)
+      end,
       show_buffer_close_icons = false,
       show_close_icon = false,
     },
