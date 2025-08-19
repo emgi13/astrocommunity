@@ -32,7 +32,6 @@ return {
   ---@type bufferline.UserConfig
   opts = {
     options = {
-      separator_style = "slope",
       diagnostics = "nvim_lsp",
       diagnostics_indicator = function(count, _level, _diagnostics_dict, _context) return "(" .. count .. ")" end,
       show_buffer_close_icons = false,
