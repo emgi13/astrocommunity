@@ -1,6 +1,5 @@
 return {
   "xiyaowong/transparent.nvim",
-  lazy = false,
   opts = {
     extra_groups = {
       "NormalFloat",
@@ -19,7 +18,15 @@ return {
     {
       "AstroNvim/astrocore",
       opts = function(_, opts)
-        opts.mappings.n["<Leader>uT"] = { "<Cmd>TransparentToggle<CR>", desc = "Toggle transparency" }
+        opts.mappings.n["<Leader>uT"] = {
+          function()
+            _G.resetup_catppuccin {
+              transparent_background = not vim.g.transparent_enabled,
+            }
+            vim.cmd "TransparentToggle"
+          end,
+          desc = "Toggle transparency",
+        }
         if vim.tbl_get(opts, "autocmds", "heirline_colors") then
           table.insert(opts.autocmds.heirline_colors, {
             event = "User",
