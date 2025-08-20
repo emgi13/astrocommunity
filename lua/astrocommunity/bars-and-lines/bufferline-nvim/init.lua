@@ -39,6 +39,7 @@ return {
   opts = {
     options = {
       diagnostics = "nvim_lsp",
+      separator_style = { "", "" },
       diagnostics_indicator = function(count, level, _diagnostics_dict, _context)
         return (count or "") .. (symbols[level] or level)
       end,
