@@ -34,9 +34,7 @@ return {
         lsp_doc_border = true, -- add a border to hover docs and signature help
       },
       views = {
-        split = {
-          enter = true, -- Enter the command output window to quickly close it
-        },
+        split = {},
       },
     })
   end,
