@@ -30,6 +30,7 @@ local symbols = {
   warning = "?",
   error = "!",
   hint = "'",
+  info = "`",
 }
 
 return {
