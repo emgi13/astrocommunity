@@ -8,8 +8,8 @@ return {
       opts = {
         mappings = {
           n = {
-            ["<Leader>Rr"] = { "<Cmd>MFROpen<CR>", desc = "mf-runner: open" },
-            ["<Leader>Re"] = { "<Cmd>MFREdit<CR>", desc = "mf-runner: edit Makefile" },
+            ["<Leader>MM"] = { "<Cmd>MFROpen<CR>", desc = "mf-runner: open" },
+            ["<Leader>Me"] = { "<Cmd>MFREdit<CR>", desc = "mf-runner: edit Makefile" },
           },
         },
       },
