@@ -30,6 +30,41 @@ return {
         neovide_max_scale_factor = vim.g.neovide_max_scale_factor or 2.0,
         neovide_initial_scale_factor = vim.g.neovide_scale_factor or 1,
         neovide_scale_factor = vim.g.neovide_scale_factor or 1,
+        -- transparency = 0.6,
+        neovide_opacity = 0.6,
+        -- neovide_background_color = "#00000099",
+        neovide_no_multigrid = true,
+        neovide_window_blurred = true,
+        neovide_floating_blur_amount_x = 2,
+        neovide_floating_blur_amount_y = 2,
+        neovide_hide_mouse_when_typing = true,
+        neovide_confirm_quit = false,
+        neovide_detach_on_quit = "always_quit",
+        neovide_fullscreen = true,
+        neovide_input_ime = true,
+
+        -- winblend = 80,
+        -- pumblend = 80,
+        -- terminal_color_0 = "#45475A", -- Black
+        -- terminal_color_1 = "#F38BA8", -- Red
+        -- terminal_color_2 = "#A6E3A1", -- Green
+        -- terminal_color_3 = "#F9E2AF", -- Yellow
+        -- terminal_color_4 = "#89B4FA", -- Blue
+        -- terminal_color_5 = "#F5C2E7", -- Purple
+        -- terminal_color_6 = "#94E2D5", -- Cyan
+        -- terminal_color_7 = "#BAC2DE", -- White
+        --
+        -- terminal_color_8 = "#585B70", -- Bright Black
+        -- terminal_color_9 = "#F38BA8", -- Bright Red
+        -- terminal_color_10 = "#A6E3A1", -- Bright Green
+        -- terminal_color_11 = "#F9E2AF", -- Bright Yellow
+        -- terminal_color_12 = "#89B4FA", -- Bright Blue
+        -- terminal_color_13 = "#F5C2E7", -- Bright Purple
+        -- terminal_color_14 = "#94E2D5", -- Bright Cyan
+        -- terminal_color_15 = "#A6ADC8", -- Bright White
+      },
+      opt = {
+        guifont = "JetBrainsMono NF:h11",
       },
     },
     commands = {
@@ -67,6 +102,10 @@ return {
           desc = "Decrease Neovide scale factor",
         },
         ["<C-0>"] = { reset_scale_factor, desc = "Reset Neovide scale factor" },
+        ["<M-CR>"] = {
+          function() vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen end,
+          desc = "Neovide Fullscreen",
+        },
       },
     },
   },
