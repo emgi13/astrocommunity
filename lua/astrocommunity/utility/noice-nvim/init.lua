@@ -6,6 +6,15 @@ return {
   opts = function(_, opts)
     local utils = require "astrocore"
     return utils.extend_tbl(opts, {
+      routes = {
+        {
+          view = "notify",
+          filter = {
+            find = "vim.deprecated",
+          },
+          opts = { skip = true },
+        },
+      },
       messages = {
         -- NOTE: If you enable messages, then the cmdline is enabled automatically.
         -- This is a current Neovim limitation.
