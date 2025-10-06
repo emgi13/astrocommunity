@@ -20,9 +20,15 @@ return {
       opts = function(_, opts)
         opts.mappings.n["<Leader>uT"] = {
           function()
-            _G.resetup_catppuccin {
-              transparent_background = not vim.g.transparent_enabled,
-            }
+            if package.loaded["catppuccin"] then
+              local catp = require "catppuccin"
+              local current_transparent_state = vim.g.transparent_enabled
+              local new_opts = require("astrocore").extend_tbl(
+                catp.options,
+                { transparent_background = not current_transparent_state }
+              )
+              catp.setup(new_opts)
+            end
             vim.cmd "TransparentToggle"
           end,
           desc = "Toggle transparency",
