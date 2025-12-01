@@ -1,7 +1,10 @@
 ---@type LazySpec
 return {
   "iamcco/markdown-preview.nvim",
-  build = function() vim.fn["mkdp#util#install"]() end,
+  build = function()
+    require("lazy").load { plugins = { "markdown-preview.nvim" } }
+    vim.fn["mkdp#util#install"]()
+  end,
   ft = { "markdown", "markdown.mdx" },
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   init = function()
